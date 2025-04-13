@@ -27,9 +27,7 @@ describe('SimpleStorage', function () {
 
   describe('Store favorite number', function () {
     it('Should store successfully', async () => {
-      const { contract, owner, publicClient } = await loadFixture(
-        deployFixture,
-      );
+      const { contract, publicClient } = await loadFixture(deployFixture);
       const hash = await contract.write.store([10n]);
       await publicClient.waitForTransactionReceipt({ hash });
 
