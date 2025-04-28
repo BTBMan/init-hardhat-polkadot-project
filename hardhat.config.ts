@@ -1,5 +1,6 @@
 import type { HardhatUserConfig } from 'hardhat/config';
-import '@nomicfoundation/hardhat-toolbox-viem';
+// import '@nomicfoundation/hardhat-toolbox-viem';
+import '@nomicfoundation/hardhat-toolbox';
 import 'hardhat-resolc';
 import 'dotenv/config';
 import './tasks';
@@ -30,6 +31,8 @@ const config: HardhatUserConfig = {
     },
     // asset hub testnet
     ah: {
+      // @ts-ignore
+      polkavm: true,
       url: 'https://westend-asset-hub-eth-rpc.polkadot.io',
       accounts: [process.env.AH_PRIV_KEY!],
     },

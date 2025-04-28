@@ -1,15 +1,17 @@
 {
   "name": "init-hardhat-polkadot-project",
   "scripts": {
-    "compile-revive": "hh compile-revive --contract SimpleStorage.sol",
-    "deploy": "hh ignition deploy ./ignition/modules/SimpleStorage.ts --network polkavm",
-    "deploy-revive": "hh deploy-revive --contract SimpleStorage.sol",
-    "deploy:script": "hh run scripts/deploy.ts --network polkavm"
+    "compile-revive:SimpleStorage": "hh compile-revive --contract SimpleStorage.sol",
+    "compile-revive:MinimalDEX": "hh compile-revive --contract MinimalDEX.sol",
+    "deploy:SimpleStorage": "hh run scripts/simpleStorage.ts --network polkavm",
+    "deploy:MinimalDEX": "hh run scripts/minimalDEX.ts --network ah",
+    "deploy:MinimalDEX:ethers": "hh run scripts/minimalDEX.ethers.ts --network ah"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-ignition": "^0.15.0",
     "@nomicfoundation/hardhat-ignition-viem": "^0.15.0",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "@nomicfoundation/hardhat-toolbox-viem": "^3.0.0",
     "@nomicfoundation/hardhat-verify": "^2.0.0",
     "@nomicfoundation/hardhat-viem": "^2.0.0",
@@ -20,7 +22,8 @@
     "@types/node": ">=18.0.0",
     "chai": "^4.2.0",
     "dotenv": "^16.5.0",
-    "hardhat": "^2.14.0",
+    "ethers": "^6.13.7",
+    "hardhat": "2.22.19",
     "hardhat-gas-reporter": "^1.0.8",
     "solidity-coverage": "^0.8.0",
     "ts-node": ">=8.0.0",

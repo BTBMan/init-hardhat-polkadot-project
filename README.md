@@ -1,13 +1,7 @@
-# Sample Hardhat Project
+# Init hardhat polkadot project
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+## Running polkadot node and rpc
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
-```
+- Go to your polkadot-sdk folder that already has compiled
+- Run `RUST_LOG="error,evm=debug,sc_rpc_server=info,runtime::revive=debug" target/release/substrate-node --dev --unsafe-rpc-external`
+- Create a new terminal and run `RUST_LOG="info,eth-rpc=debug" target/release/eth-rpc`
