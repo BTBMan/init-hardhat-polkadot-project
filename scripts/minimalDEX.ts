@@ -43,7 +43,7 @@ async function main() {
     transport: http(),
   });
   const walletClient = createWalletClient({
-    account: privateKeyToAccount(process.env.LOCAL_PRIV_KEY! as `0x${string}`),
+    account: privateKeyToAccount(process.env.AH_PRIV_KEY! as `0x${string}`),
     chain: ahChain,
     transport: http(),
   });

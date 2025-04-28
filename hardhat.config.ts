@@ -1,6 +1,6 @@
 import type { HardhatUserConfig } from 'hardhat/config';
-// import '@nomicfoundation/hardhat-toolbox-viem';
-import '@nomicfoundation/hardhat-toolbox';
+import '@nomicfoundation/hardhat-toolbox-viem';
+// import '@nomicfoundation/hardhat-toolbox';
 import 'hardhat-resolc';
 import 'dotenv/config';
 import './tasks';
