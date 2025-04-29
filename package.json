@@ -5,7 +5,8 @@
     "compile-revive:MinimalDEX": "hh compile-revive --contract MinimalDEX.sol",
     "deploy:SimpleStorage": "hh run scripts/simpleStorage.ts --network polkavm",
     "deploy:MinimalDEX": "hh run scripts/minimalDEX.ts --network ah",
-    "deploy:MinimalDEX:ethers": "hh run scripts/minimalDEX.ethers.ts --network ah"
+    "deploy:MinimalDEX:ethers": "hh run scripts/minimalDEX.ethers.ts --network ah",
+    "interaction": "hh run scripts/interaction.ts --network ah"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-ignition": "^0.15.0",

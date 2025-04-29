@@ -1,10 +1,14 @@
 import {
+  Address,
   createPublicClient,
   createWalletClient,
   defineChain,
   http,
 } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
+import hre from 'hardhat';
+
+const networkName = hre.network.name;
 
 const localChain = defineChain({
   id: 420420420,
@@ -38,8 +42,22 @@ const ahChain = defineChain({
   testnet: true,
 });
 
-const walletClient = createWalletClient({
-  account: privateKeyToAccount(process.env.LOCAL_PRIV_KEY! as `0x${string}`),
-  chain: ahChain,
+const config = {
+  chain: networkName === 'ah' ? ahChain : localChain,
+  PRIVATE_KEY: privateKeyToAccount(
+    (networkName === 'ah'
+      ? process.env.AH_PRIV_KEY!
+      : process.env.LOCAL_PRIV_KEY!) as Address,
+  ),
+};
+
+export const publicClient = createPublicClient({
+  chain: config.chain,
+  transport: http(),
+});
+
+export const walletClient = createWalletClient({
+  account: config.PRIVATE_KEY,
+  chain: config.chain,
   transport: http(),
 });
